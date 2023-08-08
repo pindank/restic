@@ -9,7 +9,7 @@ RUN go mod download
 COPY . .
 RUN go run build.go
 
-FROM alpine:latest AS restic
+FROM alpine:3.18.3 AS restic
 
 RUN apk add --update --no-cache ca-certificates fuse openssh-client tzdata
 
